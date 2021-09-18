@@ -1,0 +1,67 @@
+//============
+// Mixins
+//============
+
+//add overlay on element, between () is the color of the overlay
+@mixin overlay($color, $opacity) {
+  &::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    background: $color;
+    opacity: $opacity;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+}
+
+// add on element with equal width & height
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+//use for pseudo element
+@mixin pseudo {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+//use to troncate elements, meaning it will end the sentence or word with "..." if its too long
+@mixin truncate($max-width) {
+  max-width: $max-width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//BREAKPOINTS
+$small: 600px;
+$medium: 1024px;
+$large: 1440px;
+$xlarge: 1920px;
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == small {
+    @media (min-width: $small) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media (min-width: $medium) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media (min-width: $large) {
+      @content;
+    }
+  }
+  @else if $breakpoint == xlarge {
+    @media (min-width: $xlarge) {
+      @content;
+    }
+  }
+}
