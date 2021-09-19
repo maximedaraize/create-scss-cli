@@ -1,4 +1,4 @@
-![create scss logo](https://res.cloudinary.com/mdaraize/image/upload/v1590864320/create-scss-logo_black.svg)
+![create scss logo](https://res.cloudinary.com/mdaraize/image/upload/v1632068278/create-scss-cli/LOGO_create-scss-cli_sztji2.png)
 
 ![npm version](https://img.shields.io/npm/v/create-scss-cli)
 ![npm license](https://img.shields.io/npm/l/create-scss-cli?color=%2321bab3)
