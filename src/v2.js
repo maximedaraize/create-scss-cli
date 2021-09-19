@@ -158,4 +158,47 @@ inquirer
       }
     }
     copyFiles();
+
+    // // Add script to package.json to compile scss
+    // const saveFile = require("fs").writeFileSync;
+    // const pkgJsonPath =
+    //   require.main.paths[0].split("node_modules")[0] + "package.json";
+    // const json = require(pkgJsonPath);
+    // let slash = "/";
+
+    // //check if scripts exist
+    // if (!json.hasOwnProperty("scripts")) {
+    //   json.scripts = {};
+    // }
+    // //check if scripts dependencies
+    // if (!json.hasOwnProperty("dependencies")) {
+    //   json.dependencies = {};
+    // }
+    // //check if scripts devdependencies
+    // if (!json.hasOwnProperty("devdependencies")) {
+    //   json.devdependencies = {};
+    // }
+
+    // //replace path and / by an empty string if the path chose by the user is the root level
+    // if (answer.scss_path.endsWith("./")) {
+    //   answer.scss_path = "";
+    //   slash = "";
+    // } else if (answer.scss_path.endsWith("/")) {
+    //   slash = "";
+    // }
+
+    // /* Add two scripts two compile scss,
+    //    dependencies to be able to build on deploy
+    //    and replace create-scss from  dependencies as devdependencies
+    //    to not reinstall the structure during deploy */
+    // json.scripts[
+    //   "cs-watch"
+    // ] = `sass ${answer.scss_path}${slash}scss/main.scss ${answer.scss_path}${slash}css/style.css --watch`;
+    // json.scripts[
+    //   "cs-build"
+    // ] = `sass ${answer.scss_path}${slash}scss/main.scss ${answer.scss_path}${slash}css/style.css --style=compressed --no-source-map && postcss ${answer.scss_path}${slash}css/style.css -o ${answer.scss_path}${slash}css/style.css --use autoprefixer -b 'last 4 versions'`;
+    // json.dependencies["sass"] = `^1.27.0`;
+    // json.dependencies["autoprefixer"] = `^9.7.4`;
+    // json.dependencies["postcss-cli"] = `^7.1.0`;
+    // saveFile(pkgJsonPath, JSON.stringify(json, null, 2));
   });
