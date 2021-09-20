@@ -4,8 +4,12 @@
   "description": "A command-line interface for a quick and easy way to structure your scss",
   "main": "src/index.js",
   "bin": "src/index.js",
-  "author": "Maxime Daraize",
+  "author": "Maxime Daraize <maxime.daraize@gmail.com>",
   "homepage": "https://www.createscss.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximedaraize/create-scss-cli" 
+  },
   "url": "https://github.com/maximedaraize/create-scss-cli/issues",
   "license": "MIT",
   "keywords": [
