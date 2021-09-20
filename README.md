@@ -18,7 +18,9 @@ To learn more about **create-scss-cli**, visit [createscss.com](https://www.crea
 
 ## Installation
 
-The first thing you'll need to do is to install the cli globally. Use this command in your terminal :
+You can install the package globally or execute it right away with npx.
+
+### Global install
 
 ```sh
 npm i -g create-scss-cli
@@ -28,6 +30,12 @@ After that, you'll be able to use the create-scss-cli command in your project lo
 
 ```sh
 create-scss-cli
+```
+
+### NPX
+
+```sh
+npx create-scss-cli
 ```
 
 You will then be prompt with a series of questions to make sure the cli generate the files you want and where you want them.
