@@ -104,7 +104,7 @@ inquirer
           "\x1b[37m",
           ` \n 🎉 Thank you for using create-scss \n 🌎 Website:`,
           "\x1b[36m",
-          `https://create-scss.com`,
+          `https://createscss.com`,
           "\x1b[37m",
           `\n ⭐️ Github:`,
           "\x1b[36m",
