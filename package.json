@@ -1,11 +1,22 @@
 {
   "name": "create-scss-cli",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "A command-line interface for a quick and easy way to structure your scss",
   "main": "src/index.js",
   "bin": "src/index.js",
-  "author": "",
+  "author": "Maxime Daraize",
+  "homepage": "https://www.createscss.com",
+  "url": "https://github.com/maximedaraize/create-scss-cli/issues",
   "license": "MIT",
+  "keywords": [
+    "scss",
+    "sass",
+    "css",
+    "cli",
+    "starter",
+    "template",
+    "directory"
+  ],
   "dependencies": {
     "inquirer": "^8.1.5",
     "fs-extra": "^9.0.0",
