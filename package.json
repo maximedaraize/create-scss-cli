@@ -1,11 +1,11 @@
 {
   "name": "create-scss-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "src/index.js",
   "bin": "src/index.js",
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "inquirer": "^8.1.5",
     "fs-extra": "^9.0.0",
