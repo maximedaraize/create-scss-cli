@@ -108,7 +108,7 @@ inquirer
           "\x1b[37m",
           `\n ⭐️ Github:`,
           "\x1b[36m",
-          `https://github.com/maximedaraize/`,
+          `https://github.com/maximedaraize/create-scss-cli`,
         );
         return true;
       } catch (error) {
