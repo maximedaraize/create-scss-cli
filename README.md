@@ -18,6 +18,11 @@ To learn more about **create-scss-cli**, visit [createscss.com](https://www.crea
 
 ## Installation
 
+### Prerequisites
+
+- [Node 14](https://nodejs.org/en/)
+- [Npm](https://www.npmjs.com)
+
 You can install the package globally or execute it right away with npx.
 
 ### Global install
