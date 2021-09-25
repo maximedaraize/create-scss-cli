@@ -53,7 +53,7 @@ npx create-scss-cli
 
 You will then be prompt with a series of questions to make sure the cli generate the files you want and where you want them.
 
-https://user-images.githubusercontent.com/37809938/134782687-b8b672c2-77f4-48e9-97da-57e7d7c39c96.mov
+<img src="https://res.cloudinary.com/mdaraize/image/upload/v1632598329/create-scss-cli/carbon-cli_dvcu4y.png" alt="create-scss-cli setup example">
 
 ## Structure
 

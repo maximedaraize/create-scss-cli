@@ -1,4 +1,12 @@
-## [1.1.0](https://github.com/maximedaraize/create-scss-cli/releases/tag/v1.1.0) (2021-09-25)
+## [1.1.1](https://github.com/maximedaraize/create-scss-cli/releases/tag/1.1.1) (2021-09-25)
+
+### Fixes
+
+- Fix typo in README / package.json intro
+- Replace terminal visual by video in README.md
+- Fix broken link in CHANGELOG.md 
+
+## [1.1.0](https://github.com/maximedaraize/create-scss-cli/releases/tag/1.1.0) (2021-09-25)
 
 ### Features
 
