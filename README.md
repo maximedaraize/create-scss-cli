@@ -7,7 +7,7 @@
 A command-line interface for a quick and easy way to organize your scss.  
 
 Generate an scss folder structure anywhere you want in your application. 
-Choose what kind of preset you want to use (default, blank, custom). Manage your file the same way in every project, and save time doing it. 
+Choose what kind of preset you want to use (complete, clean, custom). Manage your file the same way in every project, and save time doing it. 
 
 <hr>
 
@@ -53,7 +53,7 @@ npx create-scss-cli
 
 You will then be prompt with a series of questions to make sure the cli generate the files you want and where you want them.
 
-<img src="https://res.cloudinary.com/mdaraize/image/upload/v1632059503/create-scss-cli/cli_phvt19.png" alt="example of create-scss-cli in action">
+https://user-images.githubusercontent.com/37809938/134782687-b8b672c2-77f4-48e9-97da-57e7d7c39c96.mov
 
 ## Structure
 
