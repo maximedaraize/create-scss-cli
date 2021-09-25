@@ -2,28 +2,48 @@
 
 const inquirer = require("inquirer");
 const fs = require("fs-extra");
-const path = require("path");
 const glob = require("glob");
+const path = require("path");
+const latestVersion = require('latest-version');
+const currentLocalVersion = require('../package.json');
+const boxen = require('boxen');
+const chalk = require ('chalk');
 
+(async (callback) => {
+	let npmLatestVersion = latestVersion('create-scss-cli');
+  let npmLatestVersionTrim = (await npmLatestVersion).replaceAll('.','');
+  let localVersionVariableTrim = currentLocalVersion.version.replaceAll('.','')
+
+  if(npmLatestVersionTrim > localVersionVariableTrim) {
+    console.log(boxen(`
+    Update available ${chalk.yellow(`${currentLocalVersion.version}`)} → ${chalk.green.bold(`${await npmLatestVersion}`)}
+    Run ${chalk.blueBright.underline('npm i -g create-scss-cli')} to update   
+    `,
+    {margin: 1, borderStyle: 'double', borderColor: 'magenta'}))
+  }
+  callback();
+})(questions);
+
+function questions(){
 inquirer
   .prompt([
     {
       name: "scss_path",
       type: "input",
       message:
-        "Where would you like to add the scss directory? (Press enter for root) 🔍",
+        "Where would you like to add the scss directory (Press enter for root) 🔍",
       default: ".",
     },
     {
       name: "scss_structure",
       type: "list",
-      message: "What structure would you like? 🎨",
-      choices: ["default", "blank", "custom"],
+      message: "What structure would you like 🎨",
+      choices: ["complete", "clean", "custom"],
     },
     {
       name: "folder",
       type: "checkbox",
-      message: "Which folder would you like to remove? 🗑 ",
+      message: "Which folder would you like to remove 🗑 ",
       choices: [
         "abstracts",
         "base",
@@ -53,7 +73,7 @@ inquirer
           "\x1b[32m",
           "\n 👍 Awesome! A new scss folder was added to your project."
         ); 
-        if (answer.scss_structure == "blank") {
+        if (answer.scss_structure == "clean") {
           glob(
             `${answer.scss_path}${slash}scss/**/_*.scss`,
             {},
@@ -102,7 +122,7 @@ inquirer
         }
         console.log(
           "\x1b[37m",
-          ` \n 🎉 Thank you for using create-scss \n 🌎 Website:`,
+          ` \n 🎉 Thank you for using create-scss-cli \n 🌎 Website:`,
           "\x1b[36m",
           `https://createscss.com`,
           "\x1b[37m",
@@ -116,7 +136,7 @@ inquirer
         if (error.message.includes("already exists")) {
           console.log(
             "\x1b[33m",
-            "🛑 A scss folder already exist at this level. " 
+            "🛑 A scss folder already exist at this level." 
           );  
           return false;
         }
@@ -133,3 +153,4 @@ inquirer
     }
     copyFiles();
   });
+}
