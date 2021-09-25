@@ -4,16 +4,17 @@
 ![npm license](https://img.shields.io/npm/l/create-scss-cli?color=%2321bab3)
 ![npm downloads](https://img.shields.io/npm/dt/create-scss-cli)
 
-⚡️ A command-line interface for a quick and easy way to organize your scss.  
+A command-line interface for a quick and easy way to organize your scss.  
 
 Generate an scss folder structure anywhere you want in your application. 
 Choose what kind of preset you want to use (default, blank, custom). Manage your file the same way in every project, and save time doing it. 
 
-#
+<hr>
 
 ## Documentation
 
 To learn more about **create-scss-cli**, visit [createscss.com](https://www.createscss.com/)
+
 
 ## Table of Contents
 
@@ -40,6 +41,8 @@ After that, you'll be able to use the create-scss-cli command in your project lo
 
 ```sh
 create-scss-cli
+#OR
+cs-cli
 ```
 
 ### NPX
