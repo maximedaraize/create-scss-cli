@@ -1,9 +1,9 @@
 {
   "name": "create-scss-cli",
-  "version": "1.0.5",
-  "description": "A command-line interface for a quick and easy way to structure your scss",
+  "version": "1.1.0",
+  "description": "A command-line interface for a quick and easy way to organize your scss. Generate an scss folder structure anywhere you want in your application. Choose what kind of preset you want to use (default, blank, custom). Manage your file the same way in every project, and save time doing it.",
   "main": "src/index.js",
-  "bin": "src/index.js",
+  "bin": {"cs-cli": "src/index.js"},
   "author": "Maxime Daraize <maxime.daraize@gmail.com>",
   "homepage": "https://www.createscss.com",
   "repository": {
@@ -17,6 +17,7 @@
     "sass",
     "css",
     "cli",
+    "scaffold",
     "starter",
     "template",
     "directory"
@@ -24,6 +25,9 @@
   "dependencies": {
     "inquirer": "^8.1.5",
     "fs-extra": "^9.0.0",
-    "glob": "^7.1.6"
+    "glob": "^7.1.6",
+    "latest-version": "^5.1.0",
+    "boxen": "^5.1.2",
+    "chalk": "^4.1.2"
   }
 }
