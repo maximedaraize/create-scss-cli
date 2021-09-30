@@ -2,7 +2,8 @@
 // Mixins
 //============
 
-//add overlay on element, between () is the color of the overlay
+//Overlay
+//Ex: @include overlay(#000000, 0.2)
 @mixin overlay($color, $opacity) {
   &::before {
     content: "";
@@ -18,20 +19,23 @@
   }
 }
 
-// add on element with equal width & height
+//Square sized elements
+//Ex: @include square(8rem)
 @mixin square($size) {
   width: $size;
   height: $size;
 }
 
-//use for pseudo element
+//Pseudo default
+//Ex: @include pseudo
 @mixin pseudo {
   content: "";
   position: absolute;
   display: block;
 }
 
-//use to troncate elements, meaning it will end the sentence or word with "..." if its too long
+//Truncate Text
+//Ex: @inlcude truncate(480px)
 @mixin truncate($max-width) {
   max-width: $max-width;
   white-space: nowrap;
@@ -39,7 +43,8 @@
   text-overflow: ellipsis;
 }
 
-//BREAKPOINTS
+//Breakpoints
+//Ex: @include breakpoint(large) {... rules}
 $small: 600px;
 $medium: 1024px;
 $large: 1440px;
@@ -63,5 +68,59 @@ $xlarge: 1920px;
     @media (min-width: $xlarge) {
       @content;
     }
+  }
+}
+
+//Vendor prefix
+//Ex: vendor {... rules}
+@mixin vendor {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+//Flexbox
+//Ex: @include flex-center-column
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-x {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-y {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+ 
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+ 
+//Z-index 
+//Ex: @inlcude z-index(modal)
+$modal: 100;
+$toast: 90;
+$drawer: 80;
+
+@mixin z-index($z-index) {
+  @if $z-index == modal {
+    z-index: $modal
+  } @else if $z-index == toast {
+    z-index: $toast
+  } @else if $z-index == drawer {
+    z-index: $drawer
   }
 }

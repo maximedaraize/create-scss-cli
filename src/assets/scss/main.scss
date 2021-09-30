@@ -2,7 +2,6 @@
 // Do not change the order of those files
 //=======================================
 
-
 //VENDOR
 @forward "vendor/normalize";
 
@@ -10,7 +9,6 @@
 @forward "abstracts/variables";
 @forward "abstracts/mixins";
 @forward "abstracts/helpers";
-@forward "abstracts/functions";
 
 // BASE
 @forward "base/reset";
@@ -41,4 +39,4 @@
 @forward "pages/home";
 
 // THEMES
-@forward "themes/theme";
+@forward "themes/dark";
