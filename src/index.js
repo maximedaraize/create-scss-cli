@@ -31,19 +31,19 @@ inquirer
       name: "scss_path",
       type: "input",
       message:
-        "Where would you like to add the scss directory (Press enter for root) 🔍",
+        "Where would you like to add the scss directory (Press enter for root)",
       default: ".",
     },
     {
       name: "scss_structure",
       type: "list",
-      message: "What structure would you like 🎨",
+      message: "Which template would you like to install",
       choices: ["complete", "clean", "custom"],
     },
     {
       name: "folder",
       type: "checkbox",
-      message: "Which folder would you like to remove 🗑 ",
+      message: "Which folder would you like to remove",
       choices: [
         "abstracts",
         "base",
