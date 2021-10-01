@@ -1,0 +1,26 @@
+//============
+// Fonts
+//============
+
+// Learm more about sass:math -> https://sass-lang.com/documentation/modules/math
+@use "sass:math"; 
+
+// Weights
+$weight--light:    300;
+$weight--normal:   400;
+$weight--medium:   500;
+$weight--semibold: 600;
+$weight--bold:     700;
+$weight--xbold:    800;
+$weight--black:    900;
+
+// Size
+$size--scale: 1.333;
+$size--base:  16px;
+$size--small:     math.round(math.div($size--base, $size--scale));
+$size--1:         math.round($size--base * $size--scale);
+$size--2:         math.round($size--1 * $size--scale);
+$size--3:         math.round($size--2 * $size--scale);
+$size--4:         math.round($size--3 * $size--scale);
+$size--5:         math.round($size--4 * $size--scale);
+$size--6:         math.round($size--5 * $size--scale);

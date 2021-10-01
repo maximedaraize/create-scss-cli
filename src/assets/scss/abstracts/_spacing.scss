@@ -1,0 +1,17 @@
+//============
+// Spacing
+//============
+
+// Learm more about sass:math -> https://sass-lang.com/documentation/modules/math
+@use "sass:math"; 
+
+//Size
+$space--scale: 2;
+$space--base:  0.25rem;
+$space--small: math.round(math.div($space--base, $space--scale)); //2
+$space--1:     ($space--base * $space--scale); //8
+$space--2:     ($space--1 * $space--scale);    //16
+$space--3:     ($space--2 * $space--scale);    //32
+$space--4:     ($space--3 * $space--scale);    //64
+$space--5:     ($space--4 * $space--scale);    //128
+$space--6:     ($space--5 * $space--scale);    //256
