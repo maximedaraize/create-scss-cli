@@ -71,7 +71,7 @@ inquirer
         });
         console.log(
           "\x1b[32m",
-          "\n ✨ A new scss directory was added to your project."
+          "\n ✨ Done. New scss directory created.",
         ); 
         if (answer.scss_structure == "clean") {
           glob(
@@ -122,13 +122,13 @@ inquirer
         }
         console.log(
           "\x1b[37m",
-          ` \n 🎉 Thank you for using create-scss-cli \n 🌎 Website:`,
+          `\n 🌎 Website:`,
           "\x1b[36m",
           `https://createscss.com`,
           "\x1b[37m",
           `\n ⭐️ Github:`,
           "\x1b[36m",
-          `https://github.com/maximedaraize/create-scss-cli`,
+          ` https://github.com/maximedaraize/create-scss-cli`,
         );
         return true;
       } catch (error) {
