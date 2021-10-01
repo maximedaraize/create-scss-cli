@@ -1,4 +1,4 @@
-## [1.2.0](https://github.com/maximedaraize/create-scss-cli/releases/tag/1.2.0) (2021-09-25)
+## [1.2.0](https://github.com/maximedaraize/create-scss-cli/releases/tag/1.2.0) (2021-10-01)
 
 ### Features
 
