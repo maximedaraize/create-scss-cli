@@ -71,7 +71,7 @@ inquirer
         });
         console.log(
           "\x1b[32m",
-          "\n 👍 Awesome! A new scss folder was added to your project."
+          "\n ✨ A new scss directory was added to your project."
         ); 
         if (answer.scss_structure == "clean") {
           glob(
