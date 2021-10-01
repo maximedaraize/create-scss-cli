@@ -5,13 +5,14 @@
 //VENDOR
 @forward "vendor/normalize";
 
-// ABSTRACT
-@forward "abstracts/variables";
-@forward "abstracts/mixins";
-@forward "abstracts/helpers";
+//ABSTRACT
+/* 
+*  All abstract partials should be use within the needed file.
+*  You can use all of them at once by using the '_index.scss'
+*  inside the abstract folder.
+*/
 
 // BASE
-@forward "base/reset";
 @forward "base/global";
 @forward "base/typography";
 @forward "base/shame";
