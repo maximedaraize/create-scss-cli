@@ -4,17 +4,16 @@
 ![npm license](https://img.shields.io/npm/l/create-scss-cli?color=%2321bab3)
 ![npm downloads](https://img.shields.io/npm/dt/create-scss-cli)
 
-A command-line interface for a quick and easy way to organize your scss.  
+A command-line interface for a quick and easy way to organize your scss.
 
-Generate an scss folder structure anywhere you want in your application. 
-Choose what kind of preset you want to use (complete, clean, custom). Manage your file the same way in every project, and save time doing it. 
+Generate an scss folder structure anywhere you want in your application.
+Choose what kind of preset you want to use (complete, clean, custom). Manage your file the same way in every project, and save time doing it.
 
 <hr>
 
 ## Documentation
 
 To learn more about **create-scss-cli**, visit [createscss.com](https://www.createscss.com/)
-
 
 ## Table of Contents
 
@@ -59,49 +58,51 @@ You will then be prompt with a series of questions to make sure the cli generate
 
 ```bash
      scss
-        │
-        ├── abstracts
-        │   ├── functions.scss
-        │   ├── helpers.scss
-        │   ├── mixins.scss
-        │   └── variables.scss
-        │
-        ├── base
-        │   ├── global.scss
-        │   ├── reset.scss
-        │   ├── shame.scss
-        │   └── typography.scss
-        │
-        ├── components
-        │   ├── alert.scss
-        │   ├── banner.scss
-        │   ├── buttons.scss
-        │   ├── card.scss
-        │   ├── forms.scss
-        │   ├── icons.scss
-        │   ├── menu.scss
-        │   ├── modal.scss
-        │   ├── progress.scss
-        │   └── table.scss
-        │
-        ├── layout
-        │   ├── footer.scss
-        │   ├── grid.scss
-        │   ├── header.scss
-        │   ├── navigation.scss
-        │   └── sidebar.scss
-        │
-        ├── pages
-        │   └── home.scss
-        │
-        ├── themes
-        │   └── theme.scss
-        │
-        ├── vendor
-        │
-        └── main.scss
+    │
+    ├── abstracts
+    │   ├── colors
+    │   ├── fonts
+    │   ├── index
+    │   ├── mixins
+    │   └── spacing
+    │
+    ├── base
+    │   ├── global.scss
+    │   ├── reset.scss
+    │   ├── shame.scss
+    │   └── typography.scss
+    │
+    ├── components
+    │   ├── alert.scss
+    │   ├── banner.scss
+    │   ├── buttons.scss
+    │   ├── card.scss
+    │   ├── forms.scss
+    │   ├── icons.scss
+    │   ├── menu.scss
+    │   ├── modal.scss
+    │   ├── progress.scss
+    │   └── table.scss
+    │
+    ├── layout
+    │   ├── footer.scss
+    │   ├── grid.scss
+    │   ├── header.scss
+    │   ├── navigation.scss
+    │   └── sidebar.scss
+    │
+    ├── pages
+    │   └── home.scss
+    │
+    ├── themes
+    │   └── theme.scss
+    │
+    ├── vendor
+    │
+    └── main.scss
 
 ```
+
 ## Contribution
 
 If you want to contribute to this project go to the [create-scss-cli](https://github.com/maximedaraize/create-scss-cli/issues) repo and open an issue ✏️
