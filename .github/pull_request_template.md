@@ -7,10 +7,10 @@ Before submitting this PR, please make sure:
 - [ ] You are using approved terminology
 - [ ] You have added comments if your code needed clarification
 
-## Fix
+## Fix/Features
 
 Close issue #...
 
-## Description
+### Description
 
 A few sentences describing the overall goals of the pull request's commits.
