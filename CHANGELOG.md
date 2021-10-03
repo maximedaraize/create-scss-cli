@@ -1,17 +1,8 @@
-## [1.2.0](https://github.com/maximedaraize/create-scss-cli/releases/tag/1.2.0) (2021-10-01)
+## [1.2.1](https://github.com/maximedaraize/create-scss-cli/releases/tag/1.2.1) (2021-10-03)
 
 ### Features
 
-- Use modern **SASS** at-rule. Replace `@import` by `@forward` and `@use`
-- Move [normalize.css](https://necolas.github.io/normalize.css/) from the base directory to the vendor directory. Renamed it `_normalize.scss` instead of `_reset.scss`
-- Add and update mixins
-- Add a new set of scss variables and css custom-property (color, font, spacing)
-- Rename theme partials as _dark.scss
-- Fix some console.log typo on install
-- Remove all Abstract partials from the main.scss since they will be use inside specific file
-- Add new partials of Abstract (colors, fonts, spacing, mixins, index). The index file create a common space for all absctract partials
-- Update the helper partials as a mixins
-
+- Add `$color--accent` variable to colors.scss partial
 ## [1.1.1](https://github.com/maximedaraize/create-scss-cli/releases/tag/1.1.1) (2021-09-25)
 
 ### Fixes
