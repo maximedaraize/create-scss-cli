@@ -115,3 +115,4 @@ Show your support by giving a ⭐️ on [Github](https://github.com/maximedaraiz
 
 [Github](https://github.com/maximedaraize/) <br>
 [NPM](https://www.npmjs.com/package/create-scss-cli)
+[Email](mailto:hello@maximedaraize.com)
