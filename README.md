@@ -5,6 +5,7 @@
 ![npm version](https://img.shields.io/npm/v/create-scss-cli)
 ![npm license](https://img.shields.io/npm/l/create-scss-cli?color=%2321bab3)
 ![npm downloads](https://img.shields.io/npm/dt/create-scss-cli)
+![npm publish](https://img.shields.io/github/workflow/status/maximedaraize/create-scss-cli/publish)
 
 A command-line interface for a quick and easy way to organize your scss.
 
