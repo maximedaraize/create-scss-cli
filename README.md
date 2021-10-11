@@ -1,4 +1,4 @@
-![create scss logo](https://res.cloudinary.com/mdaraize/image/upload/c_scale,h_320/v1633914336/create-scss-cli/logo.png)
+![create scss logo](https://res.cloudinary.com/mdaraize/image/upload/c_scale,h_200/v1633914336/create-scss-cli/logo.png)
 
 # CREATE SCSS CLI
 
