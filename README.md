@@ -39,8 +39,6 @@ npm i -g create-scss-cli
 After that, you'll be able to use the create-scss-cli command in your project loke so:
 
 ```sh
-create-scss-cli
-#OR
 cs-cli
 ```
 
@@ -57,18 +55,18 @@ You will then be prompt with a series of questions to make sure the cli generate
 ## Structure
 
 ```bash
-     scss
+scss
     │
     ├── abstracts
     │   ├── colors
     │   ├── fonts
     │   ├── index
     │   ├── mixins
-    │   └── spacing
+    │   ├── spacing
+    │   └── helper
     │
     ├── base
     │   ├── global.scss
-    │   ├── reset.scss
     │   ├── shame.scss
     │   └── typography.scss
     │
@@ -95,12 +93,12 @@ You will then be prompt with a series of questions to make sure the cli generate
     │   └── home.scss
     │
     ├── themes
-    │   └── theme.scss
+    │   └── dark.scss
     │
     ├── vendor
+    │   └── normalize.scss
     │
     └── main.scss
-
 ```
 
 ## Contribution
