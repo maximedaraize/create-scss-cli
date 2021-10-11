@@ -2,15 +2,11 @@
 // Do not change the order of those files
 //=======================================
 
-//VENDOR
+// VENDOR
 @forward "vendor/normalize";
 
-//ABSTRACT
-/* 
-*  All abstract partials should be use within the needed file.
-*  You can use all of them at once by using the '_index.scss'
-*  inside the abstract folder.
-*/
+// ABSTRACT
+@forward "abstracts/helper";
 
 // BASE
 @forward "base/global";
