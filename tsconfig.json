@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "declaration": true,
+      "outDir": "./dist",
+      "removeComments": true,
+      "module": "ESnext",
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true
+    },
+    "files": ["src/index.ts"]
+  }
