@@ -1,3 +1,7 @@
+.github
+.gitignore
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md
-.github
+src
+.eslintrc.json
+tsconfig.json
