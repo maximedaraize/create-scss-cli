@@ -10,6 +10,11 @@
   "bin": {
     "cs-cli": "src/index.js"
   },
+  "scripts": {
+    "lint": "eslint src/index.js",
+    "lint-fix": "eslint --fix src/index.js",
+    "test": "npm run lint"
+  },
   "author": "Maxime Daraize <hello@maximedaraize.com>",
   "homepage": "https://www.createscss.com",
   "repository": {
@@ -29,11 +34,14 @@
     "directory"
   ],
   "dependencies": {
-    "inquirer": "^8.2.0",
+    "boxen": "^6.2.1",
+    "chalk": "^4.1.2",
     "fs-extra": "^10.0.0",
     "glob": "^7.2.0",
-    "latest-version": "^6.0.0",
-    "boxen": "^6.2.1",
-    "chalk": "^4.1.2"
+    "inquirer": "^8.2.0",
+    "latest-version": "^6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.1"
   }
 }
