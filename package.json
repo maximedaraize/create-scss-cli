@@ -1,6 +1,6 @@
 {
   "name": "create-scss-cli",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "A command-line interface for a quick and easy way to organize your scss. Generate an scss folder structure anywhere you want in your application. Choose the template you want to use (complete, clean, custom). Manage your file the same way in every project, and save time doing it.",
   "export": "dist/index.js",
   "type": "module",
@@ -15,7 +15,8 @@
     "lint-fix": "eslint --fix src/index.ts",
     "test": "npm run lint",
     "watch": "tsc --watch",
-    "build": "tsc && cp -R src/assets dist/"
+    "build": "tsc && cp -R src/assets dist/",
+    "postinstall": "npm run build"
   },
   "author": "Maxime Daraize <hello@maximedaraize.com>",
   "homepage": "https://www.createscss.com",
