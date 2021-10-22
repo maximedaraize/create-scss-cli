@@ -1,0 +1,78 @@
+//============
+// Fonts
+//============
+
+@use "sass:math";
+
+// family
+$family--serif: Garamond, Times, serif;
+$family--sans: Arial, Helvetica, sans-serif;
+$family--mono: Monaco, Courier, monospace;
+
+// Weights
+$weight--300: 300;
+$weight--400: 400;
+$weight--500: 500;
+$weight--600: 600;
+$weight--700: 700;
+$weight--800: 800;
+$weight--900: 900;
+
+// line-height
+$leading--1: 1;
+$leading--2: 1.125;
+$leading--3: 1.250;
+$leading--4: 1.375;
+$leading--5: 1.5;
+$leading--6: 1.75;
+$leading--7: 2;
+
+// Size
+$size--scale: 1.250;
+$size--base: 16px;
+$size--1: $size--base;
+$size--2: math.round($size--base * $size--scale);
+$size--3: math.round($size--2 * $size--scale);
+$size--4: math.round($size--3 * $size--scale);
+$size--5: math.round($size--4 * $size--scale);
+$size--6: math.round($size--5 * $size--scale);
+$size--7: math.round($size--6 * $size--scale);
+
+
+$fonts: (
+  1: (
+    font-size: $size--1,
+    font-weight: $weight--300,
+    line-height: $leading--1,
+  ),
+  2: (
+    font-size: $size--2,
+    font-weight: $weight--400,
+    line-height: $leading--2,
+  ),
+  3: (
+    font-size: $size--3,
+    font-weight: $weight--500,
+    line-height: $leading--3,
+  ),
+  4: (
+    font-size: $size--4,
+    font-weight: $weight--600,
+    line-height: $leading--4,
+  ),
+  5: (
+    font-size: $size--5,
+    font-weight: $weight--700,
+    line-height: $leading--5,
+  ),
+  6: (
+    font-size: $size--6,
+    font-weight: $weight--800,
+    line-height: $leading--6,
+  ),
+  7: (
+    font-size: $size--7,
+    font-weight: $weight--900,
+    line-height: $leading--7,
+  ),
+);

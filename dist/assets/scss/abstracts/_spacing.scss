@@ -1,0 +1,92 @@
+//============
+// Spacing
+//============
+
+@use "sass:math";
+
+//Size
+$space--0: 0;
+$absolute--scale: 2;
+$absolute--base: 2px;
+
+$absolute--1: $absolute--base;
+$absolute--2: $absolute--1 * $absolute--scale;
+$absolute--3: $absolute--2 * $absolute--scale;
+$absolute--4: $absolute--3 * $absolute--scale;
+$absolute--5: $absolute--4 * $absolute--scale;
+$absolute--6: $absolute--5 * $absolute--scale;
+$absolute--7: $absolute--6 * $absolute--scale;
+$absolute--8: $absolute--7 * $absolute--scale;
+$absolute--9: $absolute--8 * $absolute--scale;
+$absolute--10: $absolute--9 * $absolute--scale;
+$absolute--11: $absolute--10 * $absolute--scale;
+$absolute--12: $absolute--11 * $absolute--scale;
+
+$relative--1: math.div(1, 12) * 100%;
+$relative--2: math.div(2, 12) * 100%;
+$relative--3: math.div(3, 12) * 100%;
+$relative--4: math.div(4, 12) * 100%;
+$relative--5: math.div(5, 12) * 100%;
+$relative--6: math.div(6, 12) * 100%;
+$relative--7: math.div(7, 12) * 100%;
+$relative--8: math.div(8, 12) * 100%;
+$relative--9: math.div(9, 12) * 100%;
+$relative--10: math.div(10, 12) * 100%;
+$relative--11: math.div(11, 12) * 100%;
+$relative--12: math.div(12, 12) * 100%;
+
+$spacing: (
+  0: (
+    absolute: $space--0,
+    relative: $space--0,
+  ),
+  1: (
+    absolute: $absolute--1,
+    relative: $relative--1,
+  ),
+  2: (
+    absolute: $absolute--2,
+    relative: $relative--2,
+  ),
+  3: (
+    absolute: $absolute--3,
+    relative: $relative--3,
+  ),
+  4: (
+    absolute: $absolute--4,
+    relative: $relative--4,
+  ),
+  5: (
+    absolute: $absolute--5,
+    relative: $relative--5,
+  ),
+  6: (
+    absolute: $absolute--6,
+    relative: $relative--6,
+  ),
+  7: (
+    absolute: $absolute--7,
+    relative: $relative--7,
+  ),
+  8: (
+    absolute: $absolute--8,
+    relative: $relative--8,
+  ),
+  9: (
+    absolute: $absolute--9,
+    relative: $relative--9,
+  ),
+  10: (
+    absolute: $absolute--10,
+    relative: $relative--10,
+  ),
+  11: (
+    absolute: $absolute--11,
+    relative: $relative--11,
+  ),
+  12: (
+    absolute: $absolute--12,
+    relative: $relative--12,
+  ),
+);
+

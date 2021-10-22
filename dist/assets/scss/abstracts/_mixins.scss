@@ -1,0 +1,183 @@
+//============
+// Mixins
+//============
+
+//Overlay
+//Ex: @include overlay(#000000, 0.2)
+@mixin overlay($color, $opacity) {
+  &::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    background: $color;
+    opacity: $opacity;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+}
+
+//Square sized elements
+//Ex: @include square(8rem)
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+//Pseudo default
+//Ex: @include pseudo
+@mixin pseudo {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+//Truncate Text
+//Ex: @inlcude truncate(480px)
+@mixin truncate($max-width) {
+  max-width: $max-width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//Breakpoints
+//Ex: @include breakpoint(large) {... rules}
+$small: 600px;
+$medium: 1024px;
+$large: 1440px;
+$xlarge: 1920px;
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == small {
+    @media (min-width: $small + 1) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media (min-width: $medium + 1) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media (min-width: $large + 1) {
+      @content;
+    }
+  }
+  @else if $breakpoint == xlarge {
+    @media (min-width: $xlarge + 1) {
+      @content;
+    }
+  }
+}
+
+//Helper
+//Ex: @include helper (will create a indicator showing the current breakpoint)
+@mixin helper {
+  &:before {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    content: 'Small';
+    font-family: sans-serif;
+    letter-spacing: 0.05rem;
+    color: #fff;
+    font-weight: 700;
+    background: #000;
+    padding: 1rem 2rem;
+  }
+
+  @include breakpoint(medium) {
+    &:before {
+      content: 'medium';
+    }
+  }
+
+  @include breakpoint(large) {
+    &:before {
+      content: 'large';
+    }
+  }
+
+  @include breakpoint(xlarge) {
+    &:before {
+      content: 'xlarge';
+    }
+  }
+}
+
+//Vendor prefix
+//Ex: @include vendor(transform, rotate(45deg);
+@mixin vendor($property, $value, $prefixes:  (webkit, ms, moz)) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  #{$property}: $value;
+}
+
+//Flexbox
+//Ex: @include flex-center-column
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-x {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-y {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+ 
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+ 
+//Z-index 
+//Ex: @inlcude z-index(modal)
+$modal: 100;
+$toast: 90;
+$drawer: 80;
+
+@mixin z-index($z-index) {
+  @if $z-index == modal {
+    z-index: $modal
+  } @else if $z-index == toast {
+    z-index: $toast
+  } @else if $z-index == drawer {
+    z-index: $drawer
+  }
+}
+
+// Fade-in-out
+// @inlcude fade(out, 0.8s, ease-in)
+@mixin fade($type, $duration, $easing) {
+  @if $type== "out" {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility opacity $duration $easing;
+  } @else if $type== "in" {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility opacity $duration $easing;
+  }
+}
+
+
+//Background
+//Ex: @include background-cover
+@mixin background-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
