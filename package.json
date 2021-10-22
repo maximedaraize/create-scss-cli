@@ -15,7 +15,7 @@
     "lint-fix": "eslint --fix src/index.ts",
     "test": "npm run lint",
     "watch": "tsc --watch",
-    "build": "tsc && cp -R src/assets dist/"
+    "compile": "tsc && cp -R src/assets dist/"
   },
   "author": "Maxime Daraize <hello@maximedaraize.com>",
   "homepage": "https://www.createscss.com",
