@@ -11,13 +11,13 @@ import { createRequire } from "module"; // Bring in the ability to create the 'r
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 const require = createRequire(import.meta.url);
-const currentLocalVersion = require("../package.json");
+import currentLocalVersion from "../package.json";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 (async (callback) => {
-  let npmLatestVersion = latestVersion("create-scss-cli");
-  let npmLatestVersionTrim = (await npmLatestVersion).replaceAll(".", "");
-  let localVersionVariableTrim = currentLocalVersion.version.replaceAll(
+  const npmLatestVersion = latestVersion("create-scss-cli");
+  const npmLatestVersionTrim = (await npmLatestVersion).replaceAll(".", "");
+  const localVersionVariableTrim = currentLocalVersion.version.replaceAll(
     ".",
     ""
   );
@@ -46,13 +46,13 @@ function questions() {
         type: "input",
         message:
           "Where would you like to add the scss directory (Press enter for root)",
-        default: ".",
+        default: "."
       },
       {
         name: "scss_structure",
         type: "list",
         message: "Which template would you like to install",
-        choices: ["complete", "clean", "custom"],
+        choices: ["complete", "clean", "custom"]
       },
       {
         name: "folder",
@@ -65,106 +65,120 @@ function questions() {
           "layout",
           "pages",
           "themes",
-          "vendor",
+          "vendor"
         ],
-        when: function (answer) {
+        when: function (answer: {
+          scss_path: string;
+          scss_structure: string;
+          folder: Array<object>;
+        }) {
           // Only run if user answered "custom" to the first prompt
           return answer.scss_structure === "custom";
-        },
-      },
-    ])
-    .then((answer) => {
-      async function copyFiles() {
-        const srcDir = path.join(__dirname, "assets");
-        const destDir = answer.scss_path;
-        let slash = "/";
-        try {
-          await fs.copySync(srcDir, destDir, {
-            overwrite: false,
-            errorOnExist: true,
-          });
-          console.log("\x1b[32m", "\n ✨ Done. New scss directory created.");
-          if (answer.scss_structure == "clean") {
-            glob(
-              `${answer.scss_path}${slash}scss/**/_*.scss`,
-              {},
-              (err, files) => {
-                files.forEach(function (item) {
-                  fs.writeFile(item, "");
-                });
-              }
-            );
-            // Remove selected folder from create-scss
-          } else if (answer.scss_structure == "custom") {
-            let folders = answer.folder;
-            folders.forEach(function (item) {
-              fs.rm(`${answer.scss_path}${slash}scss/${item}`, {
-                recursive: true,
-              }); // remove folder from create-scss structure base on user selection
-              fs.readFile(
-                `${answer.scss_path}/scss/main.scss`,
-                "utf8",
-
-                function (err, data) {
-                  if (err) throw err;
-                  let dataArray = data.split("\n"); // convert file data in an array | each line become an value
-                  let searchKeywords = Object.values(answer.folder); // save the user selection (base, components, themes, vendor, etc...)
-                  let keywordToRegex = new RegExp(
-                    searchKeywords.join("|"),
-                    "i"
-                  ); // transform the user selection in a regex | EX: /base|pages/vendor/i
-                  let keywordToRegex2 = [keywordToRegex]; // transform the regex into an array | EX: [/base|pages/vendor/i]
-
-                  let result = dataArray.filter(function (dataItem) {
-                    // **TODO** fonction trouver le moyen de convertir array searchWords en array de regex (retirer les quotes)
-                    return !keywordToRegex2.some(function (regex) {
-                      return regex.test(dataItem);
-                    });
-                  });
-                  //UPDATE FILE WITH NEW DATA
-                  let updateFile = result.join("\n");
-                  fs.writeFile(
-                    `${answer.scss_path}/scss/main.scss`,
-                    updateFile,
-                    (err) => {
-                      if (err) throw err;
-                    }
-                  );
-                }
-              );
-            });
-          }
-          console.log(
-            "\x1b[37m",
-            `\n 🌎 Website:`,
-            "\x1b[36m",
-            `https://createscss.com`,
-            "\x1b[37m",
-            `\n ⭐️ Github:`,
-            "\x1b[36m",
-            ` https://github.com/maximedaraize/create-scss-cli`
-          );
-          return true;
-        } catch (error) {
-          // if a scss folder already exist on the path chose by the user
-          if (error.message.includes("already exists")) {
-            console.log(
-              "\x1b[33m",
-              "🛑 A scss folder already exist at this level."
-            );
-            return false;
-          }
-          // if the path of installation was not define properly
-          if (error.message.includes("read-only file system")) {
-            console.log(
-              "\x1b[31m",
-              "❗️ The path you chose to install the create-scss structure was not define. \n For root level press enter or write './'"
-            );
-            return false;
-          }
-          throw error;
         }
       }
-      copyFiles();
-    });
+    ])
+    .then(
+      (answer: {
+        scss_path: string;
+        scss_structure: string;
+        folder: Array<object>;
+      }) => {
+        async function copyFiles() {
+          const srcDir: string = path.join(__dirname, "assets");
+          const destDir: string = answer.scss_path;
+          const slash = "/";
+          try {
+            await fs.copySync(srcDir, destDir, {
+              overwrite: false,
+              errorOnExist: true
+            });
+            console.log("\x1b[32m", "\n ✨ Done. New scss directory created.");
+            if (answer.scss_structure == "clean") {
+              glob(
+                `${answer.scss_path}${slash}scss/**/_*.scss`,
+                {},
+                (err: string, files: Array<string>) => {
+                  files.forEach(function (item) {
+                    fs.writeFile(item, "");
+                  });
+                }
+              );
+              // Remove selected folder from create-scss
+            } else if (answer.scss_structure == "custom") {
+              const folders = answer.folder;
+              folders.forEach(function (item) {
+                fs.rm(`${answer.scss_path}${slash}scss/${item}`, {
+                  recursive: true
+                }); // remove folder from create-scss structure base on user selection
+                fs.readFile(
+                  `${answer.scss_path}/scss/main.scss`,
+                  "utf8",
+
+                  function (err: string, data: string) {
+                    if (err) throw err;
+                    const dataArray: Array<string> = data.split("\n"); // convert file data in an array | each line become an value
+                    const searchKeywords: Array<object> = Object.values(
+                      answer.folder
+                    ); // save the user selection (base, components, themes, vendor, etc...)
+                    const keywordToRegex = new RegExp(
+                      searchKeywords.join("|"),
+                      "i"
+                    ); // transform the user selection in a regex | EX: /base|pages/vendor/i
+                    const keywordToRegex2 = [keywordToRegex]; // transform the regex into an array | EX: [/base|pages/vendor/i]
+
+                    const result = dataArray.filter(function (
+                      dataItem: string
+                    ) {
+                      // **TODO** fonction trouver le moyen de convertir array searchWords en array de regex (retirer les quotes)
+                      return !keywordToRegex2.some(function (regex) {
+                        return regex.test(dataItem);
+                      });
+                    });
+                    //UPDATE FILE WITH NEW DATA
+                    const updateFile = result.join("\n");
+                    fs.writeFile(
+                      `${answer.scss_path}/scss/main.scss`,
+                      updateFile,
+                      (err: string) => {
+                        if (err) throw err;
+                      }
+                    );
+                  }
+                );
+              });
+            }
+            console.log(
+              "\x1b[37m",
+              `\n 🌎 Website:`,
+              "\x1b[36m",
+              `https://createscss.com`,
+              "\x1b[37m",
+              `\n ⭐️ Github:`,
+              "\x1b[36m",
+              ` https://github.com/maximedaraize/create-scss-cli-zzz`
+            );
+            return true;
+          } catch (error) {
+            // if a scss folder already exist on the path chose by the user
+            if (error.message.includes("already exists")) {
+              console.log(
+                "\x1b[33m",
+                "🛑 A scss folder already exist at this level."
+              );
+              return false;
+            }
+            // if the path of installation was not define properly
+            if (error.message.includes("read-only file system")) {
+              console.log(
+                "\x1b[31m",
+                "❗️ The path you chose to install the create-scss structure was not define. \n For root level press enter or write './'"
+              );
+              return false;
+            }
+            throw error;
+          }
+        }
+        copyFiles();
+      }
+    );
 }

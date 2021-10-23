@@ -13,6 +13,7 @@
   "scripts": {
     "lint": "eslint src/index.ts",
     "lint-fix": "eslint --fix src/index.ts",
+    "format": "prettier --config .prettierrc 'src/*.ts' --write",
     "test": "npm run lint",
     "watch": "tsc --watch",
     "compile": "tsc && cp -R src/assets dist/"
@@ -44,7 +45,12 @@
     "latest-version": "^6.0.0"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
     "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
     "typescript": "^4.4.4"
   },
   "files": [

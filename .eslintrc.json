@@ -1,8 +1,17 @@
 {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "ignorePatterns": ["dist/*.js"],
     "env": {
         "browser": true,
         "es2021": true
     },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "plugins": ["prettier", "@typescript-eslint"],
     "parserOptions": {
         "ecmaVersion": 12,
         "sourceType": "module"
@@ -10,6 +19,7 @@
     "rules": {
         "no-var": "error",
         "no-unused-expressions": "error",
-        "semi": "error"
+        "semi": "error",
+        "prettier/prettier": 2
     }
 }

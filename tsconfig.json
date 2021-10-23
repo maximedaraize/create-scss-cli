@@ -4,9 +4,17 @@
       "declaration": true,
       "outDir": "./dist",
       "removeComments": true,
-      "module": "ESnext",
+      "module": "esnext",
       "moduleResolution": "node",
-      "allowSyntheticDefaultImports": true
+      "allowSyntheticDefaultImports": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "composite": true,
+      "lib": [
+        "ES2021.String"
+      ]
     },
-    "files": ["src/index.ts"]
+    "include": [
+      "src/index.ts"
+  ]
   }
