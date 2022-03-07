@@ -1,11 +1,12 @@
-## [1.5.5](https://github.com/maximedaraize/create-scss-cli/releases/tag/1.5.0) (2021-10-21)
+## [1.5.5](https://github.com/maximedaraize/create-scss-cli/releases/tag/1.5.5) (2021-10-21)
 
 ### Features
 
 - Add Eslint to the project
-- Add typescript support 
+- Add typescript support
   - Change location of output dist
   - Create script to help DX
+
 ## [1.4.0](https://github.com/maximedaraize/create-scss-cli/releases/tag/1.4.0) (2021-10-16)
 
 ### Features
